@@ -67,5 +67,12 @@ dependencies {
     implementation(libs.retrofit)
     implementation(libs.retrofit.gson.convertor)
 
+    //material 3
+
+    implementation(libs.material3)
+
+    implementation (libs.androidx.navigation.compose)
+
+    implementation(libs.androidx.material.icons.extended)
 
 }
