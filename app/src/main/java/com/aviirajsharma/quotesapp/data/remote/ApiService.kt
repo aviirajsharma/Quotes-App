@@ -11,4 +11,8 @@ interface ApiService {
 
     @GET("random")
     suspend fun getQuote() : List<QuoteResponseItem>
+
+    @GET("today")
+    suspend fun getQuoteOfTheDay() : List<QuoteResponseItem>
+
 }

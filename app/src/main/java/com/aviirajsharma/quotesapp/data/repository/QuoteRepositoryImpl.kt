@@ -1,5 +1,6 @@
 package com.aviirajsharma.quotesapp.data.repository
 
+import com.aviirajsharma.quotesapp.data.model.QuoteResponseItem
 import com.aviirajsharma.quotesapp.data.model.toDomain
 import com.aviirajsharma.quotesapp.data.remote.ApiService
 import com.aviirajsharma.quotesapp.domain.model.Quote
@@ -12,6 +13,10 @@ import com.aviirajsharma.quotesapp.domain.repository.QuoteRepository
 class QuoteRepositoryImpl (private val apiService: ApiService): QuoteRepository {
     override suspend fun getQuote(): Quote {
         return apiService.getQuote()[0].toDomain()
+    }
+
+    override suspend fun getQuoteOfTheDay(): Quote {
+        return apiService.getQuoteOfTheDay()[0].toDomain()
     }
 
 }

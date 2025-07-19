@@ -3,6 +3,7 @@ package com.aviirajsharma.quotesapp.di
 import com.aviirajsharma.quotesapp.data.remote.ApiService
 import com.aviirajsharma.quotesapp.data.repository.QuoteRepositoryImpl
 import com.aviirajsharma.quotesapp.domain.repository.QuoteRepository
+import com.aviirajsharma.quotesapp.domain.usecase.DailyQuoteUseCase
 import com.aviirajsharma.quotesapp.domain.usecase.GetQuoteUseCase
 import dagger.Module
 import dagger.Provides
@@ -46,4 +47,11 @@ object AppModule {
     fun provideGetQuoteUseCase(repository: QuoteRepository): GetQuoteUseCase{
         return GetQuoteUseCase(repository)
     }
+
+
+    @Provides
+    fun provideDailyQuoteUseCase(repository: QuoteRepository): DailyQuoteUseCase {
+        return DailyQuoteUseCase(repository)
+    }
+
 }

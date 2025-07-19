@@ -8,4 +8,5 @@ import com.aviirajsharma.quotesapp.domain.model.Quote
 
 interface QuoteRepository {
     suspend fun getQuote() : Quote
+    suspend fun getQuoteOfTheDay() : Quote
 }
